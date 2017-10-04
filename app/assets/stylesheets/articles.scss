@@ -18,3 +18,44 @@
 .container{
 	margin-left: 0px;
 }
+
+footer {
+	padding: 0;
+	font-size: 12px;
+	font-weight: 500;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #717171;
+	text-align: center;
+	border-top: 1px solid #CECECE;
+
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+}
+
+footer .footer-socials {
+	margin: 10px 0 0px;
+}
+footer .footer-socials a {
+	display: inline-block;
+	margin-right: 5px;
+	background-color: #3498DB;
+	color: #fff;
+	/* padding: 20px; */
+	font-size: 20px;
+	line-height: 45px;
+	width: 45px;
+	height: 45px;
+	border-radius: 50%;
+	-webkit-transition: all 0.2s ease-out;
+	-moz-transition: all 0.2s ease-out;
+	-o-transition: all 0.2s ease-out;
+	transition: all 0.2s ease-out;
+}
+footer .footer-socials a:hover{
+	background-color: #980d17;
+}
+footer .footer-bottom {
+	padding: 10px 0 10px;
+}
