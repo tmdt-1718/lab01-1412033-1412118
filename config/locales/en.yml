@@ -31,3 +31,8 @@
 
 en:
   hello: "Hello world"
+  breadcrumbs:
+    paths: "Home"
+    courses:
+      all: "All Courses"
+      edit: "Edit"
