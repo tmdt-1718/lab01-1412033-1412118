@@ -1,26 +1,28 @@
+<%= content_for :breadcrumbs, [['Home', href="#"], ['Blog', href="/blog"],'Show'] %>
 <div class="row">
 	<div class="col-md-12">
-		<%= render partial: "thumbnail", locals: {a: @article} %>
+		<%= render partial: "detail_content", locals: {a: @blog} %>
 	</div>
 </div>
 <div class="row">
 	<div class="col-md-12">
-		<%= link_to edit_article_path(@article.id), class: 'btn btn-primary' do%>
+		<%= link_to edit_blog_path(@blog.id), class: 'btn btn-primary' do%>
 			<%= fa_icon "pencil" %>
 			Edit
 		<% end %>
 
-		<%= link_to articles_path, class: 'btn btn-secondary' do %>
+		<%= link_to blog_index_path, class: 'btn btn-secondary' do %>
 		Back
 		<% end %>
 	</div>
 </div>
 <div class="row">
 	<div class="col-md-12">
-		comments
+		<%= fa_icon "pencil" %>
+		Comments
 		<ul id="comments">
 		</ul>
 	</div>
 </div>
 
-<input type='hidden' id="articleId" value="<%= @article.id %>">
+<input type='hidden' id="blogId" value="<%= @blog.id %>">

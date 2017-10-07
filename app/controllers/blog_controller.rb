@@ -1,13 +1,16 @@
 class BlogController < ApplicationController
   before_action :authenticate
-  before_action :get_article, only: [:show, :edit, :update, :destroy]
+  before_action :get_blog, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.limit(10)
+    @blog = Blog.limit(10)
   end
 
   def show
-
+    @blog = Blog.find(params[:id])
+    abc = @blog.view += 1
+    @blog.update_attribute "view", abc
+    
   end
 
   def edit
@@ -15,24 +18,29 @@ class BlogController < ApplicationController
   end
 
   def update
-    if @article.update(article_params)
-      flash[:success] = "Update article #{@article.id} successfully."
-      redirect_to article_path(@article.id)
+
+
+    if @blog.update(blog_params)
+      flash[:success] = "Update blog #{@blog.id} successfully."
+      redirect_to blog_path(@blog.id)
     else
-      flash[:error] = "Cannot update article #{@article.id}."
+      flash[:error] = "Cannot update blog #{@blog.id}."
       render :show
     end
+
+
+
   end
 
   def destroy
 
 
     begin
-      @article.destroy!
-      flash[:success] = "Delete article #{@article.id} successfully."
-      redirect_to articles_path
+      @blog.destroy!
+      flash[:success] = "Delete blog #{@blog.id} successfully."
+      redirect_to blog_path
     rescue ActiveRecord::RecordNotDestroyed => e
-      flash[:error] = "Cannot delete article #{@article.id}."
+      flash[:error] = "Cannot delete blog #{@blog.id}."
       render :show
     end
   end
@@ -40,11 +48,11 @@ class BlogController < ApplicationController
 
 
   private
-  def get_article
-    @article = Article.find(params[:id])
+  def get_blog
+    @blog = Blog.find(params[:id])
   end
 
-  def article_params
-    params.require(:article).permit(:title, :body)
+  def blog_params
+    params.require(:blog).permit(:user_id, :avatar, :body, :view, :title)
   end
   end

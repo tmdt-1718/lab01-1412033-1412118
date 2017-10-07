@@ -6,11 +6,13 @@ Rails.application.routes.draw do
   post '/sessions/login', to: 'sessions#create', as: nil
   delete '/sessions/logout', to: 'sessions#destroy', as: :logout
 
-  #get '/articles', to: 'articles#index'
+
   resources :articles, only: [:index, :show, :edit, :update, :destroy] do
   	resources :comments, only: [:index]
   end
-
+	resources :blog, only: [:index, :show, :edit, :update, :destroy] do
+		resources :comments, only: [:index]
+	end
   resources :photos, only: [:index]
 	resources :about, only: [:index]
 end

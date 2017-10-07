@@ -1,4 +1,4 @@
-.article-thumbnail {
+.blog-thumbnail {
 	@extend .card;
 
 	margin-bottom: 10px;
@@ -11,7 +11,7 @@
 	}
 }
 
-.article-highlight {
+.blog-highlight {
 	background-color: yellow;
 }
 
@@ -55,7 +55,7 @@ footer .footer-socials a {
 	transition: all 0.2s ease-out;
 }
 footer .footer-socials a:hover{
-	background-color: #980d17;
+	background-color: #fff;
 }
 footer .footer-bottom {
 	padding: 10px 0 10px;

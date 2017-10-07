@@ -1,17 +1,21 @@
-<div class="article-thumbnail" highlight>
+<div class="blog-thumbnail" highlight>
+
   <div class="card-body">
     <h4 class="card-title">
-    	<%= link_to article_path(a.id), class: "card-title" do %>
+      <img src=<%= a.avatar %> alt="" align="right" width="40%" height="80%">
+      <!-- Đường dẫn đến id của blog -->
+    	<%= link_to blog_path(a.id), class: "card-title" do %>
     		<%= a.title %>
     	<% end %>
     	</h4>
-    <h6 class="card-subtitle mb-2 text-muted"><%= a.user.name %></h6>
+    <h6 class="card-subtitle mb-2 text-muted">Author: <%= a.user.name %></h6>
     <p class="card-text">
-    	<%= truncate(a.body) %>	
+    	<%= truncate(a.body) %>
     	</p>
-
-    <%= link_to article_path(a.id), class: 'card-link', remote: true, method: :delete do %> 
+      <h6 class="card-subtitle mb-2 text-muted">Views: <%= a.view %></h6>
+    <%= link_to blog_path(a.id), class: 'card-link', remote: true, method: :delete do %>
     	Delete
     <% end %>
-  </div>
+    </div>
+
 </div>

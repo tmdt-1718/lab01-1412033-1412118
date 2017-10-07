@@ -1,6 +1,6 @@
 class User < ApplicationRecord
   has_many :articles
-
+  has_many :blog
 	has_secure_password
 
 	def self.authenticate!(session_params)
@@ -15,7 +15,7 @@ class User < ApplicationRecord
 
   def self.authenticate(session_params)
   	user = User.find_by(email: session_params[:email])
-  	
+
   	if user.authenticate(session_params[:password])
   		user
   	else

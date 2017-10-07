@@ -1,8 +1,8 @@
 <%= content_for :breadcrumbs, [['Home', href="#"], ['Blog', href="/articles"]] %>
 <%= render partial: 'flash_message', locals: {messages: flash} %>
 
-<h1>Blog</h1>
-<%= @articles.count %> articles
+<h1>Blogs</h1>
+<%= @articles.count %> Blogs
 
 <% @articles.each do |article| %>
 	<%= render partial: "thumbnail", locals: {a: article}%>
