@@ -10,7 +10,7 @@ class BlogController < ApplicationController
     @blog = Blog.find(params[:id])
     abc = @blog.view += 1
     @blog.update_attribute "view", abc
-    
+
   end
 
   def edit

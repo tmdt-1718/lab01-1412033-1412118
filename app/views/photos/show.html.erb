@@ -1,0 +1,24 @@
+<%= content_for :breadcrumbs, [['Home', href="#"], ['Albums', href="/photos"],'Show'] %>
+
+<div class="row">
+	<div class="col-md-12">
+		<%= link_to edit_photo_path(@album.id), class: 'btn btn-primary' do%>
+			<%= fa_icon "pencil" %>
+			Edit
+		<% end %>
+
+		<%= link_to photos_path, class: 'btn btn-secondary' do %>
+		Back
+		<% end %>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<%= fa_icon "pencil" %>
+		Comments
+		<ul id="comments">
+		</ul>
+	</div>
+</div>
+
+<input type='hidden' id="blogId" value="<%= @album.id %>">

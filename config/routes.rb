@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 	resources :blog, only: [:index, :show, :edit, :update, :destroy] do
 		resources :comments, only: [:index]
 	end
-  resources :photos, only: [:index]
+  resources :photos, only: [:index, :show, :edit, :update, :destroy] do
+		resources :comments, only: [:index]
+	end
 	resources :about, only: [:index]
 end

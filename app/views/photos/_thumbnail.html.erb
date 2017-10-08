@@ -1,0 +1,18 @@
+<div class="photos-thumbnail" highlight>
+
+  <div class="card-body">
+    <h6 class="card-title">
+      <img src=<%= a.cover %> alt="" align="right" width="40%" height="80%">
+        <!-- Đường dẫn đến id của blog -->
+      	<%= link_to photo_path(a.id), class: "card-title" do %>
+      		Details
+      	<% end %>
+      </h6>
+    <h6 class="card-subtitle mb-2 text-muted">Author: <%= a.user.name %></h6>
+    <h6 class="card-subtitle mb-2 text-muted">Views: <%= a.views %></h6>
+
+    <%= link_to photos_path(a.id), class: 'card-link', remote: true, method: :delete do %>
+    	Delete
+    <% end %>
+  </div>
+</div>
