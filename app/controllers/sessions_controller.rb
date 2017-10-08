@@ -1,16 +1,17 @@
 class SessionsController < ApplicationController
 	def new
-		
+
 	end
 
-	
+
 
 	def create
 		begin
 			user = User.authenticate!(session_params)
 			login(user)
+			NotifierMailer.login_noti(user).deliver
 			flash[:success] = "Login successfully."
-			redirect_to articles_path
+			redirect_to about_index_path
 		rescue ActiveRecord::RecordNotFound => e
 			flash[:error] = "Wrong email or password."
 			render :new
@@ -19,7 +20,7 @@ class SessionsController < ApplicationController
 
 	def destroy
 			logout
-			
+
 			redirect_to login_path
 	end
 
