@@ -2,9 +2,10 @@
 
 <div class="row">
 	<% @album.pic.each do |pic| %>
+	<div class="row">
 		<img src=<%= pic.link %> alt="" align="right" width="40%" height="80%">
 		<h5>Author: <%=@album.user.name%></h5>
-		<h5>Views: <%= pic.view %> </h5>
+		</div>
 	<% end %>
 
 </div>
