@@ -1,6 +1,19 @@
 <%= content_for :breadcrumbs, [['Home', href="#"], ['Albums', href="/photos"],'Show'] %>
 
 <div class="row">
+	<% @album.pic.each do |pic| %>
+		<img src=<%= pic.link %> alt="" align="right" width="40%" height="80%">
+		<h5>Author: <%=@album.user.name%></h5>
+		<h5>Views: <%= pic.view %> </h5>
+	<% end %>
+
+</div>
+
+
+<div class="row">
+
+
+
 	<div class="col-md-12">
 		<%= link_to edit_photo_path(@album.id), class: 'btn btn-primary' do%>
 			<%= fa_icon "pencil" %>

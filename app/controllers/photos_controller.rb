@@ -4,6 +4,7 @@ class PhotosController < ApplicationController
 
   def index
     @album = Album.limit(10)
+    
   end
 
   def show
