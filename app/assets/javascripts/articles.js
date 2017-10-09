@@ -13,7 +13,7 @@ $(document).on('turbolinks:load', function() {
     //   $(this).removeClass("article-highlight");
     // });
 
-    let articleId1 = $("#articleId").val();
+    var articleId1 = $("#articleId").val();
 
     $.get('/articles/' + articleId1 + '/comments').done(function(){
 
